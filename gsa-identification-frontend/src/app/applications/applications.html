@@ -1,1 +1,209 @@
-<p>applications works!</p>
+<div class="applications-page">
+
+  <app-header></app-header>
+
+
+  <main class="applications-container">
+
+    <!-- PAGE TITLE -->
+    <section class="page-heading">
+
+      <h1>
+        My Applications
+      </h1>
+
+      <p>
+        View your filled and submitted GSA applications here.
+      </p>
+
+    </section>
+
+
+    <div class="applications-layout">
+
+      <!-- SIDEBAR -->
+      <app-account-sidebar></app-account-sidebar>
+
+
+      <!-- MAIN CONTENT -->
+      <div class="applications-content">
+
+
+        <!-- USER SUMMARY -->
+        <section class="profile-summary">
+
+          <div class="summary-left">
+
+            <div class="avatar">
+
+              <svg viewBox="0 0 100 100">
+
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="50"
+                  fill="#e5f2fc">
+                </circle>
+
+                <circle
+                  cx="50"
+                  cy="35"
+                  r="17"
+                  fill="#78b6e6">
+                </circle>
+
+                <path
+                  d="M20 85c4-22 16-33 30-33s26 11 30 33"
+                  fill="#78b6e6">
+                </path>
+
+              </svg>
+
+            </div>
+
+
+            <div class="summary-details">
+
+              <div class="name-row">
+
+                <h2>
+                  Kasun Silva
+                </h2>
+
+                <span class="submitted-badge">
+                  <span class="status-dot">✓</span>
+                  Submitted
+                </span>
+
+              </div>
+
+              <strong>
+                1 submitted application
+              </strong>
+
+              <p>
+                You can review your submitted application details below.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- SUBMITTED APPLICATIONS -->
+        <section class="applications-card">
+
+          <div class="card-heading">
+
+            <h3>
+              Submitted Applications
+            </h3>
+
+          </div>
+
+
+          <div class="table-wrapper">
+
+            <table>
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Application ID
+                  </th>
+
+                  <th>
+                    Application Type
+                  </th>
+
+                  <th>
+                    Territory
+                  </th>
+
+                  <th>
+                    Submitted Date
+                  </th>
+
+                  <th>
+                    Status
+                  </th>
+
+                  <th>
+                    Actions
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody>
+
+                <tr>
+
+                  <td>
+                    {{ application.applicationId }}
+                  </td>
+
+                  <td>
+                    {{ application.applicationType }}
+                  </td>
+
+                  <td>
+                    {{ application.territory }}
+                  </td>
+
+                  <td>
+                    {{ application.submittedDate }}
+                  </td>
+
+                  <td>
+
+                    <span class="table-status">
+
+                      <span class="status-dot">
+                        ✓
+                      </span>
+
+                      {{ application.status }}
+
+                    </span>
+
+                  </td>
+
+                  <td>
+
+                    <button
+                      type="button"
+                      class="view-button"
+                      (click)="viewApplication()"
+                    >
+                      View Application
+                    </button>
+
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <app-footer></app-footer>
+
+</div>
