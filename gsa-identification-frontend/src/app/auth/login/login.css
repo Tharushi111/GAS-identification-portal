@@ -14,29 +14,35 @@ a {
   font-family: inherit;
 }
 
+
 /*LOGIN PAGE*/
 
 .login-page {
+  position: relative;
+
   width: 100%;
   min-height: 100vh;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  padding: 35px 7vw;
 
   background-image: url('/images/login-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/*LOGIN CARD*/
+
+/* LOGIN CARD */
 
 .login-card {
-  width: 100%;
-  max-width: 430px;
+  position: absolute;
+
+  top: 120px;
+  right: 7vw;
+
+  width: 430px;
+  max-width: calc(100% - 40px);
 
   padding: 34px 46px 26px;
 
@@ -48,6 +54,7 @@ a {
   box-shadow:
     0 12px 35px rgba(0, 0, 0, 0.18);
 }
+
 
 /*TITLE*/
 
@@ -78,6 +85,7 @@ a {
   line-height: 1.5;
 }
 
+
 /*FORM GROUP*/
 
 .form-group {
@@ -94,6 +102,7 @@ a {
   font-size: 13px;
   font-weight: 600;
 }
+
 
 /*INPUTS*/
 
@@ -135,6 +144,7 @@ a {
   box-shadow:
     0 0 0 3px rgba(10, 143, 216, 0.10);
 }
+
 
 /*PASSWORD*/
 
@@ -180,6 +190,7 @@ a {
 .password-toggle svg {
   display: block;
 }
+
 
 /*REMEMBER + FORGOT PASSWORD*/
 
@@ -235,6 +246,7 @@ a {
   text-decoration: underline;
 }
 
+
 /*SIGN IN BUTTON*/
 
 .login-button {
@@ -273,6 +285,7 @@ a {
   transform: scale(0.99);
 }
 
+
 /*SIGN UP SECTION*/
 
 .signup-section {
@@ -303,6 +316,7 @@ a {
   text-decoration: underline;
 }
 
+
 /*LOGO*/
 
 .card-logo {
@@ -324,6 +338,7 @@ a {
   object-fit: contain;
 }
 
+
 /*VALIDATION ERROR*/
 
 .error {
@@ -339,33 +354,45 @@ a {
   line-height: 1.4;
 }
 
+
 /*TABLET*/
 
 @media (max-width: 1024px) {
 
-  .login-page {
-    padding: 30px 5vw;
-  }
-
   .login-card {
+    right: 5vw;
+
     max-width: 420px;
   }
 }
+
 
 /*MOBILE*/
 
 @media (max-width: 768px) {
 
   .login-page {
+    display: flex;
+    align-items: center;
     justify-content: center;
 
     padding: 24px;
 
     background-position: 35% center;
+
+    overflow: auto;
   }
 
   .login-card {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: 100%;
     max-width: 430px;
+
+    margin: 0 auto;
 
     padding: 30px 26px 24px;
   }
@@ -379,7 +406,8 @@ a {
   }
 }
 
-/*SMALL MOBILE */
+
+/*SMALL MOBILE*/
 
 @media (max-width: 480px) {
 
