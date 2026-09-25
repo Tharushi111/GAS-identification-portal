@@ -1,1 +1,481 @@
-<p>profile works!</p>
+<div class="profile-page">
+
+  <app-header></app-header>
+
+
+  <main class="profile-container">
+
+    <!-- BACK -->
+    <button
+      type="button"
+      class="back-button"
+    >
+      ←
+    </button>
+
+
+    <!-- PAGE TITLE -->
+    <section class="page-heading">
+
+      <h1>
+        My Profile
+      </h1>
+
+      <p>
+        Basic account details are created during sign up.
+        Complete the remaining profile information here.
+      </p>
+
+    </section>
+
+
+    <div class="profile-layout">
+
+      <!-- LEFT SIDEBAR -->
+      <app-account-sidebar></app-account-sidebar>
+
+
+      <!-- MAIN CONTENT -->
+      <div class="profile-content">
+
+
+        <!-- PROFILE SUMMARY -->
+        <section class="profile-summary">
+
+          <div class="summary-left">
+
+            <div class="avatar">
+
+              <svg viewBox="0 0 100 100">
+
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="50"
+                  fill="#e5f2fc">
+                </circle>
+
+                <circle
+                  cx="50"
+                  cy="35"
+                  r="17"
+                  fill="#78b6e6">
+                </circle>
+
+                <path
+                  d="M20 85c4-22 16-33 30-33s26 11 30 33"
+                  fill="#78b6e6">
+                </path>
+
+              </svg>
+
+            </div>
+
+
+            <div class="summary-details">
+
+              <h2>
+                Kasun Silva
+              </h2>
+
+              <strong>
+                Account created successfully
+              </strong>
+
+              <p>
+                You can now add the rest of your professional and
+                company details from this page.
+              </p>
+
+              <span class="needs-completion">
+                Needs Completion
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="summary-actions">
+
+            <button
+              type="button"
+              class="save-button"
+              (click)="saveChanges()"
+            >
+              Save Changes
+            </button>
+
+            <button
+              type="button"
+              class="edit-button"
+              (click)="enableEditing()"
+            >
+              Edit
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <form [formGroup]="profileForm">
+
+          <div class="details-grid">
+
+
+            <!-- BASIC DETAILS -->
+            <section class="details-card basic-details">
+
+              <div class="card-heading">
+
+                <h3>
+                  Basic Account Details
+                </h3>
+
+                <p>
+                  These details come from the sign-up page and can
+                  be updated later if needed.
+                </p>
+
+              </div>
+
+
+              <div class="form-grid">
+
+                <div class="form-group">
+
+                  <label>
+                    First Name
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="firstName"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Last Name
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="lastName"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Business Email
+                  </label>
+
+                  <input
+                    type="email"
+                    formControlName="email"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Phone Number
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="phoneNumber"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Password
+                  </label>
+
+                  <input
+                    type="password"
+                    formControlName="password"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Confirm Password
+                  </label>
+
+                  <input
+                    type="password"
+                    formControlName="confirmPassword"
+                  >
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <!-- ADDITIONAL DETAILS -->
+            <section class="details-card additional-details">
+
+              <div class="card-heading">
+
+                <h3>
+                  Additional Profile Details
+                </h3>
+
+                <p>
+                  Add the rest of your personal details here.
+                </p>
+
+              </div>
+
+
+              <div class="form-grid">
+
+                <div class="form-group">
+
+                  <label>
+                    Job Title
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="jobTitle"
+                    placeholder="Managing Director"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Preferred Language
+                  </label>
+
+                  <select
+                    formControlName="preferredLanguage"
+                  >
+                    <option value="">
+                      English (UK)
+                    </option>
+
+                    <option value="English">
+                      English
+                    </option>
+
+                    <option value="Sinhala">
+                      Sinhala
+                    </option>
+                  </select>
+
+                </div>
+
+
+                <div class="form-group full-field">
+
+                  <label>
+                    Company Name
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="companyName"
+                    placeholder="Ceylon Horizon Travels (Pvt) Ltd"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Country
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="country"
+                    placeholder="United Kingdom"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    City
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="city"
+                    placeholder="London"
+                  >
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            <!-- ORGANIZATION -->
+            <section class="details-card organization-details">
+
+              <div class="card-heading">
+
+                <h3>
+                  Organization Information
+                </h3>
+
+                <p>
+                  These are not collected during sign up.
+                </p>
+
+              </div>
+
+
+              <div class="form-grid">
+
+                <div class="form-group">
+
+                  <label>
+                    Legal Organization Name
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="legalOrganizationName"
+                    placeholder="Not added yet"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Applicant Type
+                  </label>
+
+                  <select
+                    formControlName="applicantType"
+                  >
+
+                    <option value="">
+                      Select applicant type
+                    </option>
+
+                    <option value="Passenger">
+                      Passenger
+                    </option>
+
+                    <option value="Cargo">
+                      Cargo
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    Territory
+                  </label>
+
+                  <input
+                    type="text"
+                    formControlName="territory"
+                    placeholder="Select territory"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>
+                    IATA Status
+                  </label>
+
+                  <select
+                    formControlName="iataStatus"
+                  >
+
+                    <option value="">
+                      Select status
+                    </option>
+
+                    <option value="IATA">
+                      IATA
+                    </option>
+
+                    <option value="NON IATA">
+                      NON IATA
+                    </option>
+
+                  </select>
+
+                </div>
+
+              </div>
+
+            </section>
+
+          </div>
+
+
+          <!-- BOTTOM ACTIONS -->
+          <div class="profile-actions">
+
+            <button
+              type="button"
+              class="change-password-button"
+              (click)="changePassword()"
+            >
+              Change Password
+            </button>
+
+            <button
+              type="button"
+              class="complete-button"
+              (click)="completeProfile()"
+            >
+              Complete Profile
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <app-footer></app-footer>
+
+</div>

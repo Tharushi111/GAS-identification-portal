@@ -1,0 +1,810 @@
+:host {
+  display: block;
+
+  width: 100%;
+
+  font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  color: #212529;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.profile-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.profile-container {
+  width: 100%;
+  max-width: 1450px;
+
+  min-height: 760px;
+
+  margin:
+    0
+    auto;
+
+  padding:
+    28px
+    48px
+    70px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  padding: 0;
+
+  border:
+    2px solid
+    #0b8cdd;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #0b8cdd;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.page-heading {
+  margin-bottom: 32px;
+}
+
+.page-heading h1 {
+  margin: 0;
+
+  color: #17324f;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+.page-heading p {
+  margin:
+    6px
+    0
+    0;
+
+  color: #8e9ba7;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.profile-layout {
+  display: grid;
+
+  grid-template-columns:
+    230px
+    minmax(0, 1fr);
+
+  gap: 20px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   MAIN PROFILE CONTENT
+========================================= */
+
+.profile-content {
+  min-width: 0;
+}
+
+
+/* =========================================
+   PROFILE SUMMARY
+========================================= */
+
+.profile-summary {
+  min-height: 145px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 20px;
+
+  padding:
+    24px
+    28px;
+
+  border:
+    1px solid
+    #d7e1ea;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   SUMMARY LEFT
+========================================= */
+
+.summary-left {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+}
+
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.avatar {
+  width: 88px;
+  height: 88px;
+
+  flex-shrink: 0;
+}
+
+.avatar svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================================
+   SUMMARY DETAILS
+========================================= */
+
+.summary-details h2 {
+  margin:
+    0
+    0
+    6px;
+
+  color: #183550;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+.summary-details strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #65788a;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.summary-details p {
+  max-width: 500px;
+
+  margin:
+    0
+    0
+    10px;
+
+  color: #8f9ca8;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================
+   STATUS BADGE
+========================================= */
+
+.needs-completion {
+  display: inline-flex;
+  align-items: center;
+
+  padding:
+    4px
+    11px;
+
+  border:
+    1px solid
+    #f1cc7d;
+
+  border-radius: 20px;
+
+  background: #fff5d9;
+
+  color: #be8015;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   SUMMARY ACTIONS
+========================================= */
+
+.summary-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.summary-actions button {
+  min-width: 95px;
+  height: 38px;
+
+  padding:
+    0
+    22px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================
+   SAVE BUTTON
+========================================= */
+
+.save-button {
+  border:
+    1px solid
+    #078bd8;
+
+  background: #078bd8;
+
+  color: #ffffff;
+}
+
+.save-button:hover {
+  background: #067bc0;
+}
+
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.edit-button {
+  border:
+    1px solid
+    #078bd8;
+
+  background: #ffffff;
+
+  color: #078bd8;
+}
+
+.edit-button:hover {
+  background: #f2f9fd;
+}
+
+
+/* =========================================
+   DETAILS LAYOUT
+========================================= */
+
+.details-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(280px, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================================
+   DETAIL CARD
+========================================= */
+
+.details-card {
+  overflow: hidden;
+
+  border:
+    1px solid
+    #d6e0e9;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   CARD HEADING
+========================================= */
+
+.card-heading {
+  padding:
+    14px
+    17px;
+
+  background: #eaf3fa;
+}
+
+.card-heading h3 {
+  margin: 0;
+
+  color: #29435b;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  line-height: 1.25;
+}
+
+.card-heading p {
+  margin:
+    6px
+    0
+    0;
+
+  color: #8c99a5;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    16px
+    19px;
+
+  padding:
+    19px
+    20px;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  min-width: 0;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #556777;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   INPUTS + SELECTS
+========================================= */
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  height: 40px;
+
+  padding:
+    0
+    11px;
+
+  border:
+    1px solid
+    #d7e0e8;
+
+  border-radius: 5px;
+
+  background: #f8fafc;
+
+  color: #526474;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #078bd8;
+
+  box-shadow:
+    0
+    0
+    0
+    2px
+    rgba(7, 139, 216, 0.08);
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+  opacity: 1;
+
+  background: #f7f9fb;
+
+  color: #8995a0;
+
+  cursor: default;
+}
+
+.form-group input::placeholder {
+  color: #abb5be;
+}
+
+
+/* =========================================
+   FULL WIDTH FIELD
+========================================= */
+
+.full-field {
+  grid-column:
+    1 / -1;
+}
+
+
+/* =========================================
+   ORGANIZATION CARD
+========================================= */
+
+.organization-details {
+  grid-column: 1;
+
+  width: 76%;
+}
+
+
+/* =========================================
+   BOTTOM ACTIONS
+========================================= */
+
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 22px;
+
+  margin-top: 28px;
+
+  padding-right: 130px;
+}
+
+.profile-actions button {
+  height: 40px;
+
+  padding:
+    0
+    28px;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================
+   CHANGE PASSWORD
+========================================= */
+
+.change-password-button {
+  border:
+    1px solid
+    #078bd8;
+
+  background: #ffffff;
+
+  color: #078bd8;
+}
+
+.change-password-button:hover {
+  background: #f3f9fd;
+}
+
+
+/* =========================================
+   COMPLETE PROFILE
+========================================= */
+
+.complete-button {
+  min-width: 160px;
+
+  border:
+    1px solid
+    #078bd8;
+
+  background: #078bd8;
+
+  color: #ffffff;
+}
+
+.complete-button:hover {
+  background: #067bc0;
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .profile-container {
+    padding:
+      28px
+      30px
+      60px;
+  }
+
+  .profile-layout {
+    grid-template-columns:
+      210px
+      1fr;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organization-details {
+    width: 100%;
+  }
+
+  .profile-actions {
+    padding-right: 0;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .profile-container {
+    padding:
+      24px
+      20px
+      50px;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-summary {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .summary-actions {
+    width: 100%;
+  }
+
+  .summary-actions button {
+    flex: 1;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organization-details {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .profile-container {
+    padding:
+      20px
+      15px
+      40px;
+  }
+
+  .page-heading {
+    margin-bottom: 24px;
+  }
+
+  .page-heading h1 {
+    font-size: 25px;
+  }
+
+  .page-heading p {
+    font-size: 12px;
+  }
+
+  .profile-summary {
+    padding:
+      20px
+      18px;
+  }
+
+  .summary-left {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .summary-details h2 {
+    font-size: 22px;
+  }
+
+  .summary-details strong {
+    font-size: 12px;
+  }
+
+  .summary-details p {
+    font-size: 11px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+
+    padding:
+      16px
+      15px;
+  }
+
+  .full-field {
+    grid-column: auto;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .profile-actions button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .profile-container {
+    padding:
+      18px
+      12px
+      35px;
+  }
+
+  .page-heading h1 {
+    font-size: 23px;
+  }
+
+  .summary-actions {
+    flex-direction: column;
+  }
+
+  .summary-actions button {
+    width: 100%;
+  }
+
+  .card-heading h3 {
+    font-size: 15px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 12px;
+  }
+}
