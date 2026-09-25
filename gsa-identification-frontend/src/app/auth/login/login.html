@@ -1,1 +1,144 @@
-<p>login works!</p>
+<div class="login-page">
+
+  <div class="login-card">
+
+    <h1>WELCOME BACK</h1>
+
+    <p class="subtitle">
+      Sign in to your GSA Portal account.
+    </p>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+    >
+
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Enter your email"
+        />
+
+        @if (
+          loginForm.get('email')?.touched &&
+          loginForm.get('email')?.hasError('required')
+        ) {
+          <small class="error">
+            Email is required.
+          </small>
+        }
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="password">
+          Password
+        </label>
+
+        <div class="password-wrapper">
+
+          <input
+            id="password"
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+
+          <button
+            type="button"
+            class="password-toggle"
+            (click)="togglePassword()"
+          >
+
+            @if (!showPassword) {
+              <svg
+                viewBox="0 0 24 24"
+                width="19"
+                height="19"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            }
+
+            @if (showPassword) {
+              <svg
+                viewBox="0 0 24 24"
+                width="19"
+                height="19"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 3l18 18"/>
+                <path d="M10.6 10.6a2 2 0 002.8 2.8"/>
+                <path d="M9.9 4.2A10.8 10.8 0 0112 4c6.5 0 10 8 10 8"/>
+              </svg>
+            }
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-options">
+
+        <label class="remember">
+          <input type="checkbox" />
+          <span>Remember me</span>
+        </label>
+
+        <a
+          routerLink="/forgot-password"
+          class="forgot-link"
+        >
+          Forgot password?
+        </a>
+
+      </div>
+
+
+      <button
+        type="submit"
+        class="login-button"
+      >
+        Sign in
+      </button>
+
+    </form>
+
+
+    <div class="signup-section">
+      <span>Don't have an account?</span>
+
+      <a routerLink="/signup">
+        Sign up!
+      </a>
+    </div>
+
+
+    <!-- Logo inside card -->
+    <div class="card-logo">
+      <img
+        src="/images/srilankan-logo.png"
+        alt="SriLankan Airlines"
+      />
+    </div>
+
+  </div>
+
+</div>
